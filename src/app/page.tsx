@@ -48,18 +48,19 @@ export default function MasterConsole() {
           </p>
         </div>
 
+        {/* The Question Form is safely restored here! */}
         <QuestionForm />
-
-        <div className="mt-12 text-center">
-          <button 
-            onClick={() => setShowPinModal(true)} 
-            className="text-xs text-neutral-500 hover:text-fuchsia-400 font-bold tracking-widest uppercase transition-colors"
-          >
-            System Access
-          </button>
-        </div>
       </div>
 
+      {/* Secret Admin Button */}
+      <button 
+        onClick={() => setShowPinModal(true)} 
+        className="absolute bottom-6 text-neutral-600 hover:text-neutral-400 text-sm font-mono tracking-widest transition-colors"
+      >
+        [ ADMIN ACCESS ]
+      </button>
+
+      {/* Admin Login Modal */}
       {showPinModal && (
         <div className="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-stage-enter">
           <div className="glass-card bg-neutral-900/80 p-8 rounded-3xl w-full max-w-sm border border-neutral-800 shadow-2xl">
@@ -73,6 +74,7 @@ export default function MasterConsole() {
             <form onSubmit={handleLogin} className="space-y-5">
               <input
                 type="password"
+                autoComplete="new-password"
                 value={pinCode}
                 onChange={(e) => setPinCode(e.target.value)}
                 placeholder="Access Code"
