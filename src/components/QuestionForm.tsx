@@ -46,7 +46,7 @@ export default function QuestionForm() {
             className="w-full p-4 rounded-xl bg-black/60 text-white border border-neutral-700 focus:border-fuchsia-500 focus:ring-1 focus:ring-fuchsia-500 outline-none transition-all appearance-none cursor-pointer"
           >
             <option value="speaker">Founders Speaker Session</option>
-            <option value="workshop">Term Sheet Workshop</option>
+            <option value="workshop">Workshop</option>
           </select>
           <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-neutral-400">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
