@@ -60,7 +60,7 @@ export default function StageScreen() {
                     <div>
                       <p className="text-2xl font-bold tracking-wide text-white">{q.author || 'Anonymous'}</p>
                       <p className="text-sm font-bold text-fuchsia-400 uppercase tracking-[0.2em] mt-1">
-                        {q.session === 'workshop' ? 'Term Sheet Workshop' : 'Speaker Session'}
+                        {q.session === 'workshop' ? 'Workshop' : 'Speaker Session'}
                       </p>
                     </div>
                   </div>
