@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import Image from 'next/image';
 import QuestionForm from '../components/QuestionForm';
 import AdminDashboard from '../components/AdminDashboard';
 import StageScreen from '../components/StageScreen';
@@ -45,7 +46,7 @@ export default function MasterConsole() {
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-fuchsia-900/15 blur-[120px] rounded-full"></div>
       </div>
 
-      <div className="max-w-xl w-full z-10">
+      <div className="max-w-xl w-full z-10 flex flex-col items-center">
         <div className="mb-12 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 bg-black/80 border border-neutral-800 rounded-full backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse shadow-[0_0_12px_rgba(244,63,94,0.9)]"></span>
@@ -60,7 +61,23 @@ export default function MasterConsole() {
         </div>
 
         {/* The Question Form */}
-        <QuestionForm />
+        <div className="w-full">
+          <QuestionForm />
+        </div>
+
+        {/* QR Code Section */}
+        <div className="mt-12 flex flex-col items-center p-6 bg-white/5 rounded-3xl border border-white/10 backdrop-blur-md shadow-2xl">
+          <p className="text-neutral-400 text-xs font-bold mb-4 uppercase tracking-widest">Scan to join from your phone</p>
+          <div className="bg-white p-3 rounded-2xl shadow-[0_0_30px_rgba(217,70,239,0.15)]">
+            <Image
+              src="/qr-code-speakersession-netlify-app-short-link-agl.png"
+              alt="QR Code to join event"
+              width={160}
+              height={160}
+              className="rounded-xl"
+            />
+          </div>
+        </div>
       </div>
 
       {/* Admin Login Modal */}
