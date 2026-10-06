@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { socket } from '../lib/socket';
 
 type Question = { id: string; text: string; session: string; author: string; };
@@ -24,9 +25,16 @@ export default function StageScreen() {
         <h1 className="text-xl font-bold tracking-[0.3em] uppercase text-neutral-500">Live Q&A</h1>
         <div className="flex flex-col items-end gap-3 opacity-80">
           <span className="text-xs font-bold tracking-[0.2em] uppercase text-fuchsia-300">Scan to Participate</span>
-          <div className="w-24 h-24 bg-black border border-fuchsia-500/30 rounded-2xl flex items-center justify-center shadow-[0_0_15px_rgba(217,70,239,0.1)]">
-            <span className="text-[10px] font-bold tracking-widest uppercase text-fuchsia-400">QR Code</span>
+          <div className="w-24 h-24 bg-white border border-fuchsia-500/30 rounded-2xl flex items-center justify-center shadow-[0_0_15px_rgba(217,70,239,0.1)] p-1">
+             <Image
+              src="/qr-code-speakersession-netlify-app-short-link-agl.png"
+              alt="QR Code"
+              width={88}
+              height={88}
+              className="rounded-xl"
+            />
           </div>
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-neutral-500 mt-1">qrurl.io/agl</span>
         </div>
       </header>
 
