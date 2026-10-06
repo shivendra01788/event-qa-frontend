@@ -28,6 +28,17 @@ export default function MasterConsole() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden bg-neutral-950">
       
+      {/* Top Right Admin Button */}
+      <div className="absolute top-6 right-6 z-50">
+        <button 
+          onClick={() => setShowPinModal(true)} 
+          className="flex items-center gap-2 px-4 py-2 bg-neutral-900/80 hover:bg-neutral-800 border border-neutral-800 rounded-lg text-neutral-300 text-sm font-medium transition-all shadow-lg hover:shadow-violet-900/20 backdrop-blur-sm cursor-pointer"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+          Admin Login
+        </button>
+      </div>
+
       {/* Darkened Ambient Mesh */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-violet-900/15 blur-[120px] rounded-full"></div>
@@ -48,17 +59,9 @@ export default function MasterConsole() {
           </p>
         </div>
 
-        {/* The Question Form is safely restored here! */}
+        {/* The Question Form */}
         <QuestionForm />
       </div>
-
-      {/* Secret Admin Button */}
-      <button 
-        onClick={() => setShowPinModal(true)} 
-        className="absolute bottom-6 z-50 cursor-pointer text-neutral-600 hover:text-neutral-400 text-sm font-mono tracking-widest transition-colors"
-      >
-        [ ADMIN ACCESS ]
-      </button>
 
       {/* Admin Login Modal */}
       {showPinModal && (
@@ -66,7 +69,7 @@ export default function MasterConsole() {
           <div className="glass-card bg-neutral-900/80 p-8 rounded-3xl w-full max-w-sm border border-neutral-800 shadow-2xl">
             <div className="flex justify-between items-center mb-8">
               <h2 className="text-xl font-bold text-white tracking-wide">Console Login</h2>
-              <button onClick={() => setShowPinModal(false)} className="text-neutral-400 hover:text-white transition-colors">
+              <button onClick={() => setShowPinModal(false)} className="text-neutral-400 hover:text-white transition-colors cursor-pointer">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
               </button>
             </div>
@@ -81,7 +84,7 @@ export default function MasterConsole() {
                 className="w-full p-4 rounded-xl bg-black/80 text-white border border-neutral-700 focus:border-fuchsia-500 focus:ring-1 focus:ring-fuchsia-500 outline-none transition-all text-center tracking-[0.2em] font-mono text-lg"
                 autoFocus
               />
-              <button type="submit" className="w-full bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white font-extrabold py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(217,70,239,0.4)]">
+              <button type="submit" className="w-full bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white font-extrabold py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(217,70,239,0.4)] cursor-pointer">
                 Authenticate
               </button>
             </form>
