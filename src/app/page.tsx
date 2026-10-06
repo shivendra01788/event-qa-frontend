@@ -55,7 +55,7 @@ export default function MasterConsole() {
       {/* Secret Admin Button */}
       <button 
         onClick={() => setShowPinModal(true)} 
-        className="absolute bottom-6 text-neutral-600 hover:text-neutral-400 text-sm font-mono tracking-widest transition-colors"
+        className="absolute bottom-6 z-50 cursor-pointer text-neutral-600 hover:text-neutral-400 text-sm font-mono tracking-widest transition-colors"
       >
         [ ADMIN ACCESS ]
       </button>
